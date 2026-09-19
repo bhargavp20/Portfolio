@@ -1,0 +1,30 @@
+.edit-video {
+  position: absolute;
+  inset: 0;
+  z-index: 1; /* Sits behind play button and text */
+  display: block; /* Visible so the #t=0.001 thumbnail renders */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #080808;
+}
+
+.project.is-playing .edit-video {
+  z-index: 5; /* Elevates above all decorative text when active */
+}
+
+.project.is-playing .edit-video { display: block; }
+.project.is-playing .project-no,
+.project.is-playing .visual-word,
+.project.is-playing .project-visual::after { display: none; }
+.project.is-playing .play { opacity: 0; pointer-events: none; }
+
+.play {
+  z-index: 4;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.play:focus-visible { outline: 2px solid var(--lime); outline-offset: 4px; }
